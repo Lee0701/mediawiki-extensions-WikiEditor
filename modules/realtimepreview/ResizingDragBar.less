@@ -4,7 +4,7 @@
 // have been defined in Codex.
 
 // The dimensions of the UI affordance (the little line in the draggable area).
-@affordance-width: 4px;
+@affordance-inline-size: 4px;
 @affordance-length: 52px;
 @background-color-wikieditor-resizing-dragbar: #eaecf0;
 @background-color-wikieditor-resizing-dragbar-ew: #f8f9fa;
@@ -28,8 +28,8 @@
 }
 
 .ext-WikiEditor-ResizingDragBar span {
-	width: @affordance-length;
-	height: @affordance-width;
+	inline-size: @affordance-length;
+	block-size: @affordance-width;
 	background-color: @background-color-wikieditor-resizing-dragbar-drag;
 	border-radius: @border-radius-base;
 	display: block;
@@ -41,7 +41,7 @@
 }
 
 .ext-WikiEditor-ResizingDragBar-ew span {
-	height: @affordance-length;
-	width: @affordance-width;
+	block-size: @affordance-length;
+	inline-size: @affordance-width;
 	border-width: 0 @border-width-base;
 }
