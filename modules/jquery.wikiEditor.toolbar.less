@@ -15,13 +15,13 @@
 	/* Expandable Sections */
 	.sections {
 		float: left;
-		width: 100%;
+		inline-size: 100%;
 		clear: both;
 
 		.section {
 			float: left;
-			width: 100%;
-			border-top: 1px solid #c8ccd1;
+			inline-size: 100%;
+			border-block-start: 1px solid #c8ccd1;
 		}
 
 		.section-hidden {
@@ -33,10 +33,10 @@
 	/* Tabs */
 	.tabs {
 		float: left;
-		height: 100%;
+		block-size: 100%;
 		list-style: none;
 		margin: 0 3px;
-		min-height: 32px;
+		min-block-size: 32px;
 		position: relative;
 
 		span.tab {
@@ -49,19 +49,19 @@
 				color: #0645ad;
 				cursor: pointer;
 				display: block;
-				height: 32px;
-				padding-left: 18px;
-				padding-right: 12px;
+				block-size: 32px;
+				padding-inline-start: 18px;
+				padding-inline-end: 12px;
 
 				&:before {
 					content: '';
 					background: url( images/toolbar/arrow-down.svg ) center no-repeat;
 					display: block;
 					position: absolute;
-					top: 0;
-					left: 0;
-					width: 16px;
-					height: 32px;
+					inset-block-start: 0;
+					inset-inline-start: 0;
+					inline-size: 16px;
+					block-size: 32px;
 					transition: transform 100ms;
 
 					body.ltr & {
@@ -102,33 +102,34 @@
 	.section-secondary {
 		position: relative;
 		float: left;
-		min-height: 32px;
-		height: 100%;
+		min-block-size: 32px;
+		block-size: 100%;
 	}
 
 	.section-secondary {
 		float: right;
 
 		.group {
-			padding-right: 0;
-			padding-left: 6px;
-			border-left: 1px solid #c8ccd1;
+			padding-inline-end: 0;
+			padding-inline-start: 6px;
+			border-inline-start: 1px solid #c8ccd1;
 		}
 	}
 
 	/* Groups */
 	.group {
 		float: left;
-		min-height: 26px;
-		padding-right: 6px;
-		border-right: 1px solid #c8ccd1;
+		display: flex;
+		min-block-size: 26px;
+		padding-inline-end: 6px;
+		border-inline-end: 1px solid #c8ccd1;
 		margin: 3px;
 
 		/* Toolbar */
 		.label {
 			float: left;
 			border: 0;
-			height: 22px;
+			block-size: 22px;
 			/* stylelint-disable-next-line declaration-property-unit-disallowed-list */
 			line-height: 22px;
 			margin: 2px 8px 2px 5px;
@@ -139,8 +140,8 @@
 		img.tool {
 			float: left;
 			border: 0;
-			height: 22px;
-			width: 22px;
+			block-size: 22px;
+			inline-size: 22px;
 			padding: 2px;
 			cursor: pointer;
 		}
@@ -148,7 +149,7 @@
 		.tool-select {
 			float: left;
 			margin: 2px 0 2px 2px;
-			height: 22px;
+			block-size: 22px;
 			cursor: pointer;
 			border: 1px solid #c8ccd1;
 			padding: 0;
@@ -167,10 +168,10 @@
 					background: url( images/toolbar/arrow-down.svg ) center no-repeat;
 					display: block;
 					position: absolute;
-					top: 0;
-					right: 4px;
-					width: 16px;
-					height: 22px;
+					inset-block-start: 0;
+					inset-inline-end: 4px;
+					inline-size: 16px;
+					block-size: 22px;
 				}
 			}
 
@@ -181,8 +182,8 @@
 			.options {
 				position: absolute;
 				display: none;
-				margin-left: -1px;
-				margin-top: 22px;
+				margin-inline-start: -1px;
+				margin-block-start: 22px;
 				border: 1px solid #c8ccd1;
 				background-color: #fff;
 				z-index: 1;
@@ -229,16 +230,16 @@
 
 	.group-search {
 		float: right;
-		border-right: 0;
-		border-left: 1px solid #c8ccd1;
+		border-inline-end: 0;
+		border-inline-start: 1px solid #c8ccd1;
 	}
 
 	/* Booklet */
 	.booklet {
 		> .index {
 			float: left;
-			width: 20%;
-			height: 125px;
+			inline-size: 20%;
+			block-size: 125px;
 			overflow: auto;
 			/* stylelint-disable-next-line plugin/no-unsupported-browser-features */
 			resize: horizontal;
@@ -255,20 +256,20 @@
 		}
 
 		.pages {
-			height: 125px;
+			block-size: 125px;
 			overflow: auto;
 		}
 	}
 
 	/* Help Pages */
 	.page-table {
-		padding-left: 5px;
-		padding-right: 5px;
+		padding-inline-start: 5px;
+		padding-inline-end: 5px;
 
 		table {
 			background: none;
 			border-collapse: collapse;
-			width: 100%;
+			inline-size: 100%;
 		}
 
 		th {
@@ -277,7 +278,7 @@
 
 		td {
 			color: #000;
-			border-top: 1px solid #eaecf0;
+			border-block-start: 1px solid #eaecf0;
 		}
 
 		th,
@@ -300,11 +301,11 @@
 
 			td.cell-syntax,
 			td.cell-result {
-				width: 40%;
+				inline-size: 40%;
 			}
 
 			td.cell-description {
-				width: 20%;
+				inline-size: 20%;
 			}
 
 			/* T33649 */
@@ -318,15 +319,15 @@
 
 	/* Characters Pages */
 	.page-characters {
-		padding-bottom: 5px;
+		padding-block-end: 5px;
 
 		div {
 			span {
 				border: 1px solid #eaecf0;
 				padding: 5px 8px;
-				margin-left: 5px;
-				margin-top: 5px;
-				height: 1em;
+				margin-inline-start: 5px;
+				margin-block-start: 5px;
+				block-size: 1em;
 				display: inline-block;
 				color: #202122;
 				text-decoration: none;
@@ -360,8 +361,8 @@
 	background-repeat: no-repeat;
 	display: inline-block;
 	vertical-align: middle;
-	width: 24px;
-	height: 24px;
+	inline-size: 24px;
+	block-size: 24px;
 	text-indent: -9999px;
 	cursor: pointer;
 	overflow: hidden;
@@ -385,7 +386,7 @@
 		}
 
 		.wikieditor-toolbar-table-preview-frame {
-			width: 340px;
+			inline-size: 340px;
 			background: #fff;
 			padding: 10px;
 			overflow: hidden;
@@ -394,12 +395,12 @@
 		}
 
 		.wikieditor-toolbar-table-preview-content {
-			width: 375px;
+			inline-size: 375px;
 			display: block;
 		}
 
 		.wikieditor-toolbar-table-preview {
-			width: 340px;
+			inline-size: 340px;
 		}
 	}
 }

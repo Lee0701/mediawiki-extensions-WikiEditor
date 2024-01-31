@@ -13,7 +13,7 @@
 
 	.group {
 		&:last-of-type {
-			border-right: 0;
+			border-inline-end: 0;
 		}
 
 		.tool-select .menu .options {
@@ -67,12 +67,12 @@
 
 		> .oo-ui-iconElement-icon {
 			margin: 0;
-			width: 20px;
-			height: 20px;
-			min-width: 20px;
-			min-height: 20px;
-			left: 2px;
-			top: 2px;
+			inline-size: 20px;
+			block-size: 20px;
+			min-inline-size: 20px;
+			min-block-size: 20px;
+			inset-inline-start: 2px;
+			inset-block-start: 2px;
 			opacity: 0.8;
 		}
 	}

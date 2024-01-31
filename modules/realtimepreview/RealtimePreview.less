@@ -13,9 +13,9 @@
 .mw-editform .ext-WikiEditor-realtimepreview-textbox#wpTextbox1 {
 	// stylelint-disable-next-line plugin/no-unsupported-browser-features
 	resize: none;
-	height: 100%;
-	min-height: auto;
-	max-height: none;
+	block-size: 100%;
+	min-block-size: auto;
+	max-block-size: none;
 }
 
 .ext-WikiEditor-realtimepreview-preview {
@@ -24,11 +24,11 @@
 }
 
 .wikiEditor-ui .wikiEditor-ui-view {
-	border-bottom: 0;
+	border-block-end: 0;
 }
 
 .ext-WikiEditor-ResizingDragBar-ns {
-	border-top: 1px solid @colorGray12;
+	border-block-start: @border-width-base @border-style-base @border-color-subtle;
 }
 
 @loadingbar-width: 20%;
@@ -39,9 +39,9 @@
 	display: block;
 	opacity: 1;
 	content: ' ';
-	background-color: @color-primary;
-	width: @loadingbar-width;
-	height: 4px;
+	background-color: @background-color-progressive;
+	inline-size: @width-loading-bar;
+	block-size: 4px;
 	// Hide the loading bar to start with; it'll be shown if the loading state persists for more than 1s.
 	visibility: hidden;
 	animation: loadingbar 1.5s 1s infinite linear alternate;
@@ -50,12 +50,11 @@
 @keyframes loadingbar {
 	0% {
 		visibility: visible;
-		left: 0;
+		inset-inline-start: 0;
 	}
 
 	100% {
-		// stylelint-disable-next-line plugin/no-unsupported-browser-features
-		left: calc( 100% - @loadingbar-width );
+		inset-inline-start: calc( 100% - @width-loading-bar );
 	}
 }
 
@@ -64,8 +63,8 @@
 		opacity: 0;
 		transition: opacity 100ms;
 		position: absolute;
-		top: 8px;
-		right: 15px;
+		inset-block-start: 8px;
+		inset-inline-end: 15px;
 		z-index: 5;
 	}
 

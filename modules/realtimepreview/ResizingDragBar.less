@@ -1,7 +1,7 @@
 @import 'mediawiki.ui/variables.less';
 
 // The dimensions of the UI affordance (the little line in the draggable area).
-@affordance-width: 4px;
+@affordance-inline-size: 4px;
 @affordance-length: 52px;
 
 .ext-WikiEditor-ResizingDragBar {
@@ -21,10 +21,10 @@
 }
 
 .ext-WikiEditor-ResizingDragBar span {
-	width: @affordance-length;
-	height: @affordance-width;
-	background-color: @colorGray12;
-	border-radius: 2px;
+	inline-size: @affordance-length;
+	block-size: @affordance-width;
+	background-color: @background-color-wikieditor-resizing-dragbar-drag;
+	border-radius: @border-radius-base;
 	display: block;
 	margin: 2px;
 }
@@ -34,7 +34,7 @@
 }
 
 .ext-WikiEditor-ResizingDragBar-ew span {
-	height: @affordance-length;
-	width: @affordance-width;
-	border-width: 0 1px;
+	block-size: @affordance-length;
+	inline-size: @affordance-width;
+	border-width: 0 @border-width-base;
 }
